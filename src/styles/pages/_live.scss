@@ -250,7 +250,7 @@
     margin: 0;
     margin-top: 24px;
     max-width: 512px;
-    
+
     @include bp(md) {
       max-width: 288px;
     }
