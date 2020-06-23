@@ -282,28 +282,26 @@
     max-width: none;
     padding: 0 16px;
     width: 62.5%;
+    max-width: 62.5%;
   }
-
-  @media (min-width: 512px) {
-    max-width: 512px;
+  
+  
+  &.w-event-section__column-right__schedule {
+    margin-top: -16px;
+    
+    @include bp(md) {
+      padding: 0px;
+    }
+    
+    @include bp(sm) {
+      padding: 0px !important;
+    }
   }
 
   @include bp(sm) {
     // On larger devices, force padding even on the schedule (this wins over
     // ...__schedule, above).
     padding: 0 16px !important;
-  }
-
-  &.w-event-section__column-right__schedule {
-    margin-top: -16px;
-
-    @include bp(md) {
-      padding: 0px;
-    }
-
-    @include bp(sm) {
-      padding: 0px !important;
-    }
   }
 
   .w-event-carousel {
