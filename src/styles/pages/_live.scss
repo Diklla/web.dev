@@ -29,6 +29,8 @@
 }
 
 .w-livestream-section {
+  background-color: $GREY_50;
+
   @include bp(md) {
     border-bottom: 1px solid $GREY_300;
   }
@@ -36,14 +38,15 @@
 
 .w-live-chat-notice {
   align-items: center;
+  background-color: $WHITE;
   color: $GREY_700;
   display: flex;
   font-size: 12px;
   padding: 19px 16px;
 
-  // Hide the notice if we're at small desktop size and the primary pointing
-  // device supports hover. This should exclude iPads but include Pixelbooks.
-  @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (hover: hover) {
+  // Only display the notice if the device's primary pointing device does not
+  // support hover. This lets us filter out phones and tablets.
+  @media (hover: hover) {
     display: none;
   }
 
@@ -264,6 +267,10 @@
 
   .w-feedback-button {
     margin-top: 49px;
+
+    :first-child {
+      margin-right: 8px;
+    }
   }
 }
 
