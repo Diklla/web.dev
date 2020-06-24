@@ -28,42 +28,42 @@
   }
 }
 
+.w-live-flow + .w-live-flow {
+  margin-top: 80px;
+}
+
 .w-livestream-section {
   background-color: $GREY_50;
 
   @include bp(md) {
     border-bottom: 1px solid $GREY_300;
   }
+
+  .w-live-chat-notice {
+    align-items: center;
+    background-color: $WHITE;
+    color: $GREY_700;
+    display: flex;
+    font-size: 12px;
+    padding: 19px 16px;
+  
+    // Only display the notice if the device's primary pointing device does not
+    // support hover. This lets us filter out phones and tablets.
+    @media (hover: hover) {
+      display: none;
+    }
+  
+    > :first-child {
+      margin-right: 16px;
+    }
+  }
 }
 
-.w-live-chat-notice {
-  align-items: center;
-  background-color: $WHITE;
-  color: $GREY_700;
-  display: flex;
-  font-size: 12px;
-  padding: 19px 16px;
-
-  // Only display the notice if the device's primary pointing device does not
-  // support hover. This lets us filter out phones and tablets.
-  @media (hover: hover) {
-    display: none;
-  }
-
-  > :first-child {
-    margin-right: 16px;
-  }
-}
 
 .w-live-top {
   // We need this as the live background extends outside the normal l/r of the
   // page. Contain it so it doesn't let users scroll.
   overflow-x: hidden;
-
-  // jiwoong@
-  .w-event-section__column-right {
-    padding: 0 24px;
-  }
 }
 
 .w-event-buttons {
@@ -147,10 +147,10 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: (64px - $WEB_HEADER_HEIGHT - 48px) auto 64px;
   max-width: 960px;
-  padding-top: ($WEB_HEADER_HEIGHT + 48px);
   text-align: center;  // for mobile
+  margin-left: auto;
+  margin-right: auto;
 
   &::before {
     display: none !important;
@@ -159,14 +159,6 @@
   @include bp(md) {
     text-align: inherit;
   }
-
-  &#schedule .w-event-section__column-left {
-    margin-bottom: 64px;
-  }
-
-  .w-event-schedule__blurb {
-    color: $GREY_700;
-  }
 }
 
 .w-event-section--subscribe {
@@ -174,8 +166,11 @@
   padding-right: 32px;
 
   // Make the subscribe area less huge as it has its own padding.
+  // TODO(michaelsolati): Remove the padding overrides in the subscribe include.
+  // The spacing for this element should be defined by the containing page.
   web-subscribe {
     margin-top: -32px;
+    margin-bottom: -32px;
   }
 }
 
@@ -303,7 +298,10 @@
       display: flex;
     }
   }
+}
 
+.w-event-section__column-right--extra-padding {
+  padding: 0 24px;
 }
 
 .w-event-carousel {
@@ -467,6 +465,10 @@ web-tabs.w-event-tabs {
       position: absolute;
       z-index: 0;
     }
+  }
+
+  .w-event-schedule__blurb {
+    color: $GREY_700;
   }
 }
 

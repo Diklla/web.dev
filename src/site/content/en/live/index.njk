@@ -10,7 +10,7 @@ date: 2020-06-31
 <div class="w-live-landing-page">
 
   {% if event.isDuringEvent %}
-    <section class="w-livestream-section">
+    <section class="w-livestream-section w-live-flow">
       <web-livestream-container>
         <div class="web-livestream-container__skeleton-yt"></div>
         <div class="web-livestream-container__skeleton-chat"></div>
@@ -23,24 +23,27 @@ date: 2020-06-31
   {% endif %}
 
   {% if event.isPreEvent or event.isPostEvent %}
-    <div class="w-live-top">
+    <div class="w-live-top w-live-flow">
       <section class="w-event-section">
+        <div class="w-event-section__column-left">
 
-        <div class="w-event-section__column-left w-event-heading">
-          <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
-            <video width="156" height="72" autoplay muted loop playsinline>
-              <source src="live.mp4" type="video/mp4" />
-              <img src="live.png" alt="live" />
-            </video>
-          </h1>
-          <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+          <div class="w-event-heading">
+            <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+              <video width="156" height="72" autoplay muted loop playsinline>
+                <source src="live.mp4" type="video/mp4" />
+                <img src="live.png" alt="live" />
+              </video>
+            </h1>
+            <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+          </div>
+
         </div>
 
         <div class="w-event-section__column-head w-event-hero">
           <img src="hero.png" alt="" />
         </div>
 
-        <div class="w-event-section__column-right">
+        <div class="w-event-section__column-right w-event-section__column-right--extra-padding">
           <h2 class="w-mt--non">
             Bringing web developers together, from home
           </h2>
@@ -82,11 +85,10 @@ date: 2020-06-31
 
       </section>
     </div>
-    <hr />
+    <hr class="w-live-flow">
   {% endif %}
 
-  <section id="schedule" class="w-event-section">
-
+  <section id="schedule" class="w-event-section w-live-flow">
     {% if event.isPreEvent %}
       <div class="w-event-section__column-left">
         <h3 class="w-mt--non">What to expect</h3>
@@ -168,14 +170,11 @@ date: 2020-06-31
       {% endif %}
       {% EventTable event.days, collections.authors %}
     </div>
-
   </section>
-
-  <hr />
+  <hr class="w-live-flow">
 
   {% if event.isPostEvent %}
-    <section id="map" class="w-event-section">
-
+    <section id="map" class="w-event-section w-live-flow">
       <div class="w-event-section__column-left">
         <h3 class="w-mt--non">
           <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm11.99 4c.9 0 1.64.59 1.9 1.4A7.991 7.991 0 0020 12c0-3.35-2.08-6.23-5.01-7.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1h-2v2h6c.55 0 1 .45 1 1v3h1z" fill="#5F6368"/></svg>
@@ -191,19 +190,17 @@ date: 2020-06-31
         <web-event-map key={{site.maps.apiKey}}></web-event-map>
       </div>
     </section>
+    <hr class="w-live-flow">
   {% endif %}
 
-  <hr />
-
-  <section id="subscribe" class="w-event-section w-event-section--subscribe">
+  <section id="subscribe" class="w-event-section w-event-section--subscribe w-live-flow">
     {% set subscribeTitle = "Sign up for web.dev updates" %}
     {% set subscribeNotes = "Get updates related to web.dev LIVE as well as the latest news and techniques straight to your inbox." %}
     {% include 'partials/subscribe.njk' %}
   </section>
+  <hr class="w-live-flow">
 
-  <hr />
-
-  <section id="share" class="w-event-section">
+  <section id="share" class="w-event-section w-live-flow">
     <div class="w-event-section__column-left">
       <div class="w-display--flex w-flex--column w-align-items--center w-justify-content--center">
         <p class="w-mb--non">
