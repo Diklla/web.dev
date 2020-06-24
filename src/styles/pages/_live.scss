@@ -5,6 +5,10 @@
 .w-live-landing-page {
   color: $GREY_800;
 
+  // We need this as the hero image extends outside the normal l/r of the
+  // page. Contain it so it doesn't let users scroll.
+  overflow-x: hidden;
+
   p {
     font-size: 14px;
     line-height: 1.5;
@@ -28,8 +32,13 @@
   }
 }
 
+// A utility for creating consistent vertical rhythm between sections.
 .w-live-flow + .w-live-flow {
-  margin-top: 80px;
+  margin-top: 48px;
+
+  @include bp(md) {
+    margin-top: 80px;
+  }
 }
 
 .w-livestream-section {
@@ -60,10 +69,8 @@
 }
 
 
-.w-live-top {
-  // We need this as the live background extends outside the normal l/r of the
-  // page. Contain it so it doesn't let users scroll.
-  overflow-x: hidden;
+.w-hero-section {
+  margin-top: 50px;
 }
 
 .w-event-buttons {
@@ -174,7 +181,6 @@
   }
 }
 
-
 .w-event-hero {
   align-items: center;
   box-sizing: content-box;
@@ -182,8 +188,12 @@
   height: 192px;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 0 64px;
+  padding: 0 0 50px;
   position: relative;
+  
+  @include bp(md) {
+    padding: 0 0 64px;
+  }
 
   &::before {
     background-image: url('../live/hero-bg.png');
@@ -244,11 +254,6 @@
     }
   }
 
-  .w-event-link {
-    font-size: 14px;
-    margin-top: 24px;
-  }
-
   .w-event-buttons {
     margin: 16px 0;
   }
@@ -271,25 +276,6 @@
     width: 62.5%;
     max-width: 62.5%;
   }
-  
-  
-  &.w-event-section__column-right__schedule {
-    margin-top: -16px;
-    
-    @include bp(md) {
-      padding: 0px;
-    }
-    
-    @include bp(sm) {
-      padding: 0px !important;
-    }
-  }
-
-  @include bp(sm) {
-    // On larger devices, force padding even on the schedule (this wins over
-    // ...__schedule, above).
-    padding: 0 16px !important;
-  }
 
   .w-event-carousel {
     display: none;
@@ -302,6 +288,11 @@
 
 .w-event-section__column-right--extra-padding {
   padding: 0 24px;
+}
+
+.w-event-link {
+  font-size: 14px;
+  margin-top: 24px;
 }
 
 .w-event-carousel {
@@ -328,7 +319,7 @@
   }
 }
 
-.w-event-carousel--mobile {
+.w-event-carousel--mobile-only {
   @include bp(md) {
     display: none;
   }

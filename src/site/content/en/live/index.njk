@@ -23,72 +23,63 @@ date: 2020-06-31
   {% endif %}
 
   {% if event.isPreEvent or event.isPostEvent %}
-    <div class="w-live-top w-live-flow">
-      <section class="w-event-section">
-        <div class="w-event-section__column-left">
-
-          <div class="w-event-heading">
-            <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
-              <video width="156" height="72" autoplay muted loop playsinline>
-                <source src="live.mp4" type="video/mp4" />
-                <img src="live.png" alt="live" />
-              </video>
-            </h1>
-            <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
-          </div>
-
+    <section class="w-event-section w-hero-section w-live-flow">
+      <div class="w-event-section__column-left">
+        <div class="w-event-heading">
+          <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+            <video width="156" height="72" autoplay muted loop playsinline>
+              <source src="live.mp4" type="video/mp4" />
+              <img src="live.png" alt="live" />
+            </video>
+          </h1>
+          <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
         </div>
-
-        <div class="w-event-section__column-head w-event-hero">
-          <img src="hero.png" alt="" />
-        </div>
-
-        <div class="w-event-section__column-right w-event-section__column-right--extra-padding">
-          <h2 class="w-mt--non">
-            Bringing web developers together, from home
-          </h2>
-          <p>
-            These are unprecedented times, with people worldwide looking to stay connected and informed.
-            The Web plays a special role here, and we're proud to see how the community has stepped up.
-          </p>
-          <p>
-            Join Google's Web Platform team, from the comfort of your homes, to celebrate our community's actions, learn modern web techniques and connect with each other.
-          </p>
-
-          <div class="w-event-buttons">
-            <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="scroll-to-subscribe" data-action="click" href="#subscribe">
-              Get notified
-            </a>
-            <div class="w-event-calendar">
-              <div class="w-event-calendar__note">
-                <span>Add to calendar</span>
-              </div>
-              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Google Calendar" data-action="click" target="_blank"
-                href="https://calendar.google.com/calendar/r?cid=webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
-                rel="noopener">
-                Google
-              </a>
-              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to iCal" data-action="click" target="_blank"
-                href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
-                rel="noopener">
-                iCal
-              </a>
-              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Outlook" data-action="click" target="_blank"
-                href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
-                rel="noopener">
-                Outlook
-              </a>
+      </div>
+      <div class="w-event-section__column-head w-event-hero">
+        <img src="hero.png" alt="" />
+      </div>
+      <div class="w-event-section__column-right w-event-section__column-right--extra-padding">
+        <h2 class="w-mt--non">
+          Bringing web developers together, from home
+        </h2>
+        <p>
+          These are unprecedented times, with people worldwide looking to stay connected and informed.
+          The Web plays a special role here, and we're proud to see how the community has stepped up.
+        </p>
+        <p>
+          Join Google's Web Platform team, from the comfort of your homes, to celebrate our community's actions, learn modern web techniques and connect with each other.
+        </p>
+        <div class="w-event-buttons">
+          <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="scroll-to-subscribe" data-action="click" href="#subscribe">
+            Get notified
+          </a>
+          <div class="w-event-calendar">
+            <div class="w-event-calendar__note">
+              <span>Add to calendar</span>
             </div>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Google Calendar" data-action="click" target="_blank"
+              href="https://calendar.google.com/calendar/r?cid=webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+              rel="noopener">
+              Google
+            </a>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to iCal" data-action="click" target="_blank"
+              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+              rel="noopener">
+              iCal
+            </a>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Outlook" data-action="click" target="_blank"
+              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+              rel="noopener">
+              Outlook
+            </a>
           </div>
-
         </div>
-
-      </section>
-    </div>
+      </div>
+    </section>
     <hr class="w-live-flow">
   {% endif %}
 
-  <section id="schedule" class="w-event-section w-live-flow">
+  <section id="schedule" class="w-event-section w-schedule-section w-live-flow">
     {% if event.isPreEvent %}
       <div class="w-event-section__column-left">
         <h3 class="w-mt--non">What to expect</h3>
@@ -100,22 +91,24 @@ date: 2020-06-31
       </div>
     {% endif %}
 
-    <web-event-carousel class="w-event-carousel w-event-carousel--mobile">
-      {# These just exist as dummy HTML elements for the first render. They're replaced by the
-          web-event-carousel CE when it loads. #}
-      <div class="w-event-carousel__day">
-        <div class="w-event-carousel__thumbnail"></div>
-        <div class="w-event-carousel__description">Day 1</div>
-      </div>
-      <div class="w-event-carousel__day">
-        <div class="w-event-carousel__thumbnail"></div>
-        <div class="w-event-carousel__description">Day 2</div>
-      </div>
-      <div class="w-event-carousel__day">
-        <div class="w-event-carousel__thumbnail"></div>
-        <div class="w-event-carousel__description">Day 3</div>
-      </div>
-    </web-event-carousel>
+    {% if event.isDuringEvent or event.isPostEvent %}
+      <web-event-carousel class="w-event-carousel w-event-carousel--mobile-only">
+        {# These just exist as dummy HTML elements for the first render. They're replaced by the
+            web-event-carousel CE when it loads. #}
+        <div class="w-event-carousel__day">
+          <div class="w-event-carousel__thumbnail"></div>
+          <div class="w-event-carousel__description">Day 1</div>
+        </div>
+        <div class="w-event-carousel__day">
+          <div class="w-event-carousel__thumbnail"></div>
+          <div class="w-event-carousel__description">Day 2</div>
+        </div>
+        <div class="w-event-carousel__day">
+          <div class="w-event-carousel__thumbnail"></div>
+          <div class="w-event-carousel__description">Day 3</div>
+        </div>
+      </web-event-carousel>
+    {% endif %}
 
     {% if event.isDuringEvent %}
       <div class="w-event-section__column-left">
@@ -203,9 +196,9 @@ date: 2020-06-31
   <section id="share" class="w-event-section w-live-flow">
     <div class="w-event-section__column-left">
       <div class="w-display--flex w-flex--column w-align-items--center w-justify-content--center">
-        <p class="w-mb--non">
+        <div>
           Share this event with your friends
-        </p>
+        </div>
         <div class="w-event-buttons">
           <share-action
             message=" web.dev LIVE, a three day digital event for web developers by Google."
